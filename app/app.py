@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 # In-memory storage for tickets (for simplicity)
 tickets = []
-#
+
 # Home route - Show all tickets
 @app.route("/")
 def index():
@@ -25,7 +25,7 @@ def create_ticket():
     }
     tickets.append(ticket)
     return redirect(url_for("index"))
-
+# fixed something
 # Route to update a ticket's status
 @app.route("/update_ticket/<int:ticket_id>", methods=["POST"])
 def update_ticket(ticket_id):
