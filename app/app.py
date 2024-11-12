@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 # In-memory storage for tickets (for simplicity)
 tickets = []
-
+#
 # Home route - Show all tickets
 @app.route("/")
 def index():
