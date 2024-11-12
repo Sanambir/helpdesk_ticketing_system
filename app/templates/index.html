@@ -1,0 +1,38 @@
+<!-- templates/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IT Helpdesk Ticketing System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>IT Helpdesk Ticketing System</h1>
+
+    <!-- Ticket Submission Form -->
+    <form action="{{ url_for('create_ticket') }}" method="POST">
+        <input type="text" name="title" placeholder="Ticket Title" required>
+        <textarea name="description" placeholder="Describe your issue" required></textarea>
+        <button type="submit">Submit Ticket</button>
+    </form>
+
+    <h2>Tickets</h2>
+    <ul>
+        {% for ticket in tickets %}
+        <li>
+            <strong>{{ ticket.title }}</strong> - {{ ticket.description }} <br>
+            Status: {{ ticket.status }} - Created at: {{ ticket.created_at }}
+            <form action="{{ url_for('update_ticket', ticket_id=ticket.id) }}" method="POST">
+                <select name="status">
+                    <option value="Open" {% if ticket.status == 'Open' %}selected{% endif %}>Open</option>
+                    <option value="In Progress" {% if ticket.status == 'In Progress' %}selected{% endif %}>In Progress</option>
+                    <option value="Closed" {% if ticket.status == 'Closed' %}selected{% endif %}>Closed</option>
+                </select>
+                <button type="submit">Update Status</button>
+            </form>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
