@@ -30,4 +30,4 @@ jobs:
 
       - name: Deploy to Azure Web App
         run: |
-          az webapp up --name helpdesk-app-sanambir --resource-group example-resources --location "Canada Central"
+          az webapp up --name helpdesk-app-sanambir --resource-group example-resources --location "East US"
