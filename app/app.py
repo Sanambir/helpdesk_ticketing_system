@@ -25,7 +25,7 @@ def create_ticket():
     }
     tickets.append(ticket)
     return redirect(url_for("index"))
-# fixed something
+# fixed something #
 # Route to update a ticket's status
 @app.route("/update_ticket/<int:ticket_id>", methods=["POST"])
 def update_ticket(ticket_id):
