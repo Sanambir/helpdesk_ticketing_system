@@ -34,6 +34,6 @@ def update_ticket(ticket_id):
             ticket["status"] = request.form["status"]
             break
     return redirect(url_for("index"))
-
+#
 if __name__ == "__main__":
     app.run(debug=True)
