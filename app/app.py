@@ -12,7 +12,7 @@ tickets = []
 @app.route("/")
 def index():
     return render_template("index.html", tickets=tickets)
-
+#
 # Route to create a new ticket
 @app.route("/create_ticket", methods=["POST"])
 def create_ticket():
