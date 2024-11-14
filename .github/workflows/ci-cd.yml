@@ -18,4 +18,4 @@ jobs:
       with:
         app-name: 'helpdesk-app-sanambir4'
         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-        package: '.'
+        package: '.'    
